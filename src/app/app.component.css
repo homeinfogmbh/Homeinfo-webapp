@@ -1,0 +1,11 @@
+@media screen and (max-width: 600px) {
+  app-menu {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  app-menu2 {
+    display: none;
+  }
+}
