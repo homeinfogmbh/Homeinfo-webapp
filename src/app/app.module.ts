@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './modules/menu/menu.component';
 import { HeaderComponent } from './modules/header/header.component';
 import {RouterModule} from '@angular/router';
-import { HomeComponent } from './modules/home/home.component';
+import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './modules/footer/footer.component';
-import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Menu2Component } from './modules/menu2/menu2.component';
+import { AuthComponent } from './auth/auth.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ShowComponent } from './show/show.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,16 @@ import { Menu2Component } from './modules/menu2/menu2.component';
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    LoginComponent,
-    Menu2Component
+    Menu2Component,
+    AuthComponent,
+    ShowComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

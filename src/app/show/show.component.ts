@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../../auth.service';
+import {AuthService} from '../auth.service';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-show',
+  templateUrl: './show.component.html',
+  styleUrls: ['./show.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class ShowComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) { }
 
