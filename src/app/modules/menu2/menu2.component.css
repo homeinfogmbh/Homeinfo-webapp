@@ -1,0 +1,11 @@
+p.card-text {
+  text-align: center;
+}
+h5 {
+  font-size: 0.7em;
+  text-align: center;
+}
+
+.nav-item {
+  height: fit-content;
+}
