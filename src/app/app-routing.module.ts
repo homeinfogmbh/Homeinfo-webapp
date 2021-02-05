@@ -3,10 +3,11 @@ import {CommonModule} from '@angular/common';
 //import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {Routes, RouterModule} from '@angular/router';
-import {AuthGuard} from './auth.guard';
+
 import {AuthComponent} from './auth/auth.component';
 import {ShowComponent} from './show/show.component';
 import {NewsComponent} from './news/news.component';
+import {AuthGuard} from './auth/auth.guard';
 
 const routes: Routes = [
   // standart route redirecting to homepage

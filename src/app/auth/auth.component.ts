@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../auth.service';
 import {Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from './auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -15,14 +15,15 @@ export class AuthComponent implements OnInit {
 
   ngOnInit(): void {
     this.authForm  =  this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+      id: ['', Validators.required],
+      passwd: ['', Validators.required]
     });
   }
   get formControls() { return this.authForm.controls; }
 
   signIn(){
     this.isSubmitted = true;
+    console.log("log in button")
     if(this.authForm.invalid){
       return;
     }

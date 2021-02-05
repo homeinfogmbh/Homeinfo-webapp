@@ -12,6 +12,8 @@ import { Menu2Component } from './modules/menu2/menu2.component';
 import { AuthComponent } from './auth/auth.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ShowComponent } from './show/show.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { ShowComponent } from './show/show.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
