@@ -13,6 +13,9 @@ import { AuthComponent } from './auth/auth.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ShowComponent } from './show/show.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { NewsChartComponent } from './news-chart/news-chart.component';
+import {OAuthModule} from 'angular-oauth2-oidc';
+import { AllowAccessComponent } from './allow-acces/allow-access.component';
 
 
 @NgModule({
@@ -25,6 +28,8 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
     Menu2Component,
     AuthComponent,
     ShowComponent,
+    NewsChartComponent,
+    AllowAccessComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
