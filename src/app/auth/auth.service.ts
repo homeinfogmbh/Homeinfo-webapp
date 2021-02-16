@@ -2,9 +2,8 @@ import {Injectable} from '@angular/core';
 import {User} from './user';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {tap} from 'rxjs/operators';
-import {Observable, BehaviorSubject, throwError, Subscription} from 'rxjs';
+import {Observable, BehaviorSubject} from 'rxjs';
 import {JwtResponse} from './jwt-response';
-import {Router} from '@angular/router';
 
 
 @Injectable({

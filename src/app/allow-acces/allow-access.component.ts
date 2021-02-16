@@ -11,6 +11,7 @@ import {AuthService} from '../auth/auth.service';
 })
 export class AllowAccessComponent implements OnInit {
   code: string;
+
   constructor(private route: ActivatedRoute, private router: Router, private httpClient: HttpClient, private authService: AuthService) {
   }
 
@@ -21,26 +22,27 @@ export class AllowAccessComponent implements OnInit {
       });
   }
 
+  //Todo into 1 Swal window
   allow() {
-      let formData = new FormData();
-      formData.append('code', this.code);
-      formData.append('grant_type', 'authorization_code');
-      formData.append('client_id', localStorage.getItem('client_id'));
-      formData.append('client_secret', localStorage.getItem('client_secret'));
-      formData.append('redirect_uri', 'http://localhost:4200/grantAccess');
-      formData.append('scope', 'comcat');
-      return this.httpClient.post(
-        `https://comcat.homeinfo.de/oauth/token`, formData, //url -> https://comcat.homeinfo.de/authorize
-        {headers: {'Accept': 'application/x-www-form-urlencoded'}})
-        .subscribe(res => {
-            //console.log('accesstoken' + res);
-            localStorage.setItem('ACCESS_TOKEN', res['access_token']);
-            localStorage.setItem('REFRESH_TOKEN', res['refresh_token']);
-            this.authService.authSubjectValue(true);
-          },
-          err => {
-            console.log(err);
-          });
+    let formData = new FormData();
+    formData.append('code', this.code);
+    formData.append('grant_type', 'authorization_code');
+    formData.append('client_id', localStorage.getItem('client_id'));
+    formData.append('client_secret', localStorage.getItem('client_secret'));
+    formData.append('redirect_uri', 'http://localhost:4200/grantAccess');
+    formData.append('scope', 'comcat');
+    this.httpClient.post(
+      `https://comcat.homeinfo.de/oauth/token`, formData,
+      {headers: {'Accept': 'application/x-www-form-urlencoded'}})
+      .subscribe(res => {
+          //console.log('accesstoken' + res);
+          localStorage.setItem('ACCESS_TOKEN', res['access_token']);
+          localStorage.setItem('REFRESH_TOKEN', res['refresh_token']);
+          this.authService.authSubjectValue(true);
+        },
+        err => {
+          console.log(err);
+        });
   }
 
   refuse() {

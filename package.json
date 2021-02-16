@@ -26,6 +26,7 @@
     "angular-oauth2-oidc": "^10.0.3",
     "bootstrap": "^4.6.0",
     "crypto": "^1.0.1",
+    "referrer-policy": "^1.2.0",
     "rxjs": "~6.6.0",
     "sweetalert2": "^10.14.1",
     "tslib": "^2.0.0",
